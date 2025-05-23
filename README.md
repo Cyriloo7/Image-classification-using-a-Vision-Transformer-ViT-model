@@ -57,7 +57,7 @@
 
 ## ⚙️ Configuration & Hyperparameters
 
-Image size: 224×224 (ViT default)
+**_Image size:_** 224×224 (ViT default)
 
 Batch size: configurable (train.py, evaluate.py, predict.py)
 
