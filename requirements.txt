@@ -1,0 +1,7 @@
+Python ≥ 3.7
+PyTorch
+torchvision
+timm
+scikit-learn
+matplotlib
+pillow

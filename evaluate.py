@@ -8,18 +8,19 @@ from sklearn.metrics import ConfusionMatrixDisplay
 import matplotlib.pyplot as plt
 
 def main():
-    # parser = argparse.ArgumentParser()
-    # parser.add_argument('--data_dir', required=True)
-    # parser.add_argument('--model_ckpt', required=True)
-    # args = parser.parse_args()
-    data_dir = r'data'
-    model_ckpt = r'models/best_vit.pth'
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--data_dir', required=True)
+    parser.add_argument('--model_ckpt', required=True)
+    args = parser.parse_args()
+
+    # data_dir = r'data'
+    # model_ckpt = r'models/best_vit.pth'
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    val_loader, classes = get_orientation_loaders_evaluation(data_dir, batch_size=64)
+    val_loader, classes = get_orientation_loaders_evaluation(args.data_dir, batch_size=4)
 
-    model = build_vit(len(classes), model_ckpt)
-    model.load_state_dict(torch.load(model_ckpt, map_location=device))
+    model = build_vit(len(classes), args.model_ckpt)
+    model.load_state_dict(torch.load(args.model_ckpt, map_location=device))
     model.to(device).eval()
 
     y_true, y_pred = [], []

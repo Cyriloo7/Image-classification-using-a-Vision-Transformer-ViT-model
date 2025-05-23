@@ -26,11 +26,11 @@ def predict(image_path: str, ckpt_path: str, img_size: int = 224):
     print(f"Prediction: {classes[idx]}")
 
 if __name__ == '__main__':
-    # parser = argparse.ArgumentParser()
-    # parser.add_argument('--image', required=True)
-    # parser.add_argument('--ckpt', required=True)
-    # args = parser.parse_args()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--image', required=True)
+    parser.add_argument('--ckpt', required=True)
+    args = parser.parse_args()
 
-    image = r'skip classification\New folder\skip\4d7dba93-4f34-4d72-a028-ee9dc8525353.jpg'
-    ckpt = r'models\best_vit.pth'
-    predict(image, ckpt)
+    # image = r'skip classification\New folder\skip\4d7dba93-4f34-4d72-a028-ee9dc8525353.jpg'
+    # ckpt = r'models\best_vit.pth'
+    predict(args.image, args.ckpt)
