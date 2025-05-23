@@ -57,15 +57,15 @@
 
 ## ⚙️ Configuration & Hyperparameters
 
-**_Image size:_** 224×224 (ViT default)
+**Image size:** 224×224 (ViT default)
 
-Batch size: configurable (train.py, evaluate.py, predict.py)
+**Batch size:** configurable (train.py, evaluate.py, predict.py)
 
-Learning rate: default 3e-5
+**Learning rate:** default 3e-5
 
-Epochs: default 4 in train.py (adjust as needed)
+**Epochs:** default 4 in train.py (adjust as needed)
 
-Class weights: computed automatically to balance classes
+**Class weights:** computed automatically to balance classes
 
 You can override these via editing the script constants or by adding argparse flags.
 
