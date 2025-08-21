@@ -5,6 +5,7 @@ import torch
 import torch.nn as nn
 from sklearn.metrics import accuracy_score
 from sklearn.utils.class_weight import compute_class_weight
+from tqdm import tqdm
 
 from model import build_vit
 from data_utils import get_orientation_loaders
@@ -14,7 +15,7 @@ def train_one_epoch(model, loader, criterion, optimizer, device):
     total_loss = 0.0
     y_true, y_pred = [], []
 
-    for imgs, labels in loader:
+    for imgs, labels in tqdm(loader, desc="Training"):
         imgs, labels = imgs.to(device), labels.to(device)
         optimizer.zero_grad()
         outputs = model(imgs)

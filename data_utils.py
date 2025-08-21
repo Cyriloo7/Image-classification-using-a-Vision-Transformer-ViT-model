@@ -20,8 +20,8 @@ def get_orientation_loaders(
                              std=(0.5, 0.5, 0.5))
     ])
 
-    train_folder = os.path.join(data_dir, 'train')
-    val_folder   = os.path.join(data_dir, 'val')
+    train_folder = os.path.join(os.getcwd(), 'train')
+    val_folder   = os.path.join(os.getcwd(), 'val')
 
     train_ds = datasets.ImageFolder(train_folder, transform=transform)
     val_ds   = datasets.ImageFolder(val_folder,   transform=transform)
@@ -57,8 +57,8 @@ def get_orientation_loaders_evaluation(
                              std=(0.5, 0.5, 0.5))
     ])
 
-    # train_folder = os.path.join(data_dir, 'train')
-    val_folder   = os.path.join(data_dir, 'val')
+    # train_folder = os.path.join(os.getcwd(), 'train')
+    val_folder   = os.path.join(os.getcwd(), 'val')
 
     # train_ds = datasets.ImageFolder(train_folder, transform=transform)
     val_ds   = datasets.ImageFolder(val_folder,   transform=transform)
