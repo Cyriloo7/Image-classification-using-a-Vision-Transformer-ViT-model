@@ -52,7 +52,7 @@
 
 5. Predict a single image
    ```bash
-   python .\predict.py --image data\skip\background --ckpt models\best_vit.pth
+   python predict.py --image "1_class_for_annotation" --ckpt models\best_vit.pth --out_dir predictions
    ```
 
 ## ⚙️ Configuration & Hyperparameters
